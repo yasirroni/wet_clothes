@@ -1,0 +1,164 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\title{Wet Clothes: A Bayesian Approach to Inferring Rain from Wet Conditions}
+\author{Muhammad Yasirroni \and Sudiro}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a Bayesian approach analysis of the relationship between rain and wet conditions that appears in discrete mathematics. We examine how the probability of rain changes when wet conditions are observed, considering various scenarios. The results demonstrate the power of Bayesian challenging common answer that we can't inferring rain when clothes are wet.
+\end{abstract}
+
+\section{Introduction}
+Bayesian analysis provides a powerful framework for updating beliefs based on observed evidence \textbf{ADD CITATION}. In this paper, we apply Bayesian reasoning to the relationship between rain (p) and wet conditions (q). It's all start from basic logic example in discrete mathematic with problem:
+
+\begin{enumerate}
+    \item $p \rightarrow q$
+    \item $q$
+    \item[$\therefore$] Therefore, $p \vee \neg p$.
+\end{enumerate}
+
+We start with a basic question, "Does we really can't infer p given q?" Then, we explore impacts of probabilistic of each event and how they affect our updated beliefs.
+
+\section{Methodology}
+
+To easily understand the problem, we formulate the premises into a rain and wet clothes problem. Thus, we define the following variables:
+
+\begin{itemize}
+    \item $p$: raining
+    \item $q$: clothes are wet
+    \item $P(p)$: prior probability of rain
+    \item $P(q|p)$: probability of wet conditions given rain
+    \item $P(q|\neg p)$: probability of wet conditions given no rain
+\end{itemize}
+
+Using Bayes' theorem, we calculate:
+
+\begin{equation}
+    P(p|q) = \frac{P(q|p) \cdot P(p)}{P(q)}
+\end{equation}
+
+The change in probability is given by:
+
+\begin{equation}
+    \Delta P(p) = P(p|q) - P(p) = \frac{P(q|p) \cdot P(p)}{P(q)} - P(p)
+\end{equation}
+
+\section{Analysis of High Prior Probability Scenario}
+We first consider a scenario with high prior probability of rain and strong correlation with wet conditions:
+
+\begin{itemize}
+    \item x = 0.8 (80\% chance of rain initially)
+    \item y = 0.9 (90\% chance of wet conditions if raining)
+    \item z = 0.5 (50\% chance of wet conditions if not raining)
+\end{itemize}
+
+Calculating:
+
+\begin{align*}
+    P(p|q) &= \frac{0.9 \cdot 0.8}{0.9 \cdot 0.8 + 0.5 \cdot 0.2} \approx 0.878 \\
+    \Delta P(p) &= 0.878 - 0.8 = 0.078
+\end{align*}
+
+In this scenario, observing wet conditions increases our belief in rain by 7.8 percentage points.
+
+\section{Analysis of Maximum Change Scenario}
+To maximize the change in P(p), we consider:
+
+\begin{itemize}
+    \item x = 0.1 (10\% chance of rain initially)
+    \item y = 0.99 (99\% chance of wet conditions if raining)
+    \item z = 0.01 (1\% chance of wet conditions if not raining)
+\end{itemize}
+
+Calculating:
+
+\begin{align*}
+    P(p|q) &= \frac{0.99 \cdot 0.1}{0.99 \cdot 0.1 + 0.01 \cdot 0.9} \approx 0.917 \\
+    \Delta P(p) &= 0.917 - 0.1 = 0.817
+\end{align*}
+
+In this case, observing wet conditions dramatically increases our belief in rain by 81.7 percentage points.
+
+\section{Comparison and Discussion}
+Table \ref{tab:comparison} compares the two scenarios:
+
+\begin{table}[h]
+\centering
+\caption{Comparison of Scenarios}
+\label{tab:comparison}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Scenario & P(p) & P(p|q) & $\Delta$ P(p) \\
+\midrule
+High Prior & 0.8 & 0.878 & 0.078 \\
+Max Change & 0.1 & 0.917 & 0.817 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The maximum change scenario demonstrates a much larger update in beliefs. This occurs because:
+
+\subsection{Multiple Consequent Scenario}
+Consider a scenario where a single cause p leads to multiple consequences \{q1, q2, ..., qn\}. For example:
+
+\begin{itemize}
+    \item If it rains (p), then clothes get wet (q1)
+    \item If it rains (p), then grass outside gets wet (q2)
+    \item If it rains (p), then streets get wet (q3)
+    \item ...and so on
+\end{itemize}
+
+In this case, observing all consequences \{q1, q2, ..., qn\} strongly suggests p, but doesn't logically necessitate it. For instance, if we observe that clothes, grass, and streets are all wet, it's reasonable to deduce that it rained, even though other explanations (like a flood or tsunami) are logically possible.
+
+This scenario demonstrates the difference between logical deduction and probabilistic inference \textbf{ADD CITATION}. While logic doesn't allow us to conclude p with certainty, Bayesian reasoning provides a framework for quantifying the increased likelihood of p given the observed evidence.
+
+The strength of this inference depends on:
+
+\begin{enumerate}
+    \item The number of observed consequences
+    \item The specificity of these consequences to the cause of rain
+    \item The prior probability of rain is low, allowing more room for update.
+    \item There's a strong correlation between rain and wet conditions.
+    \item Wet conditions are very unlikely when it's not raining.
+\end{enumerate}
+
+In practice, as the number of observed consequences increases and these consequences become more specific to p, our posterior belief in p approaches certainty, even if it never quite reaches it \textbf{ADD CITATION}. This aligns with how humans often reason in everyday situations, making inferences that are probabilistically sound even if not logically guaranteed.
+
+\section{Comprehensive Analysis}
+% Table \ref{tab:comprehensive} presents a comprehensive analysis of how P(p|q) and $\Delta$P(p) vary with different values of x, y, and z.
+
+% \begin{table}[h]
+% \centering
+% \caption{Comprehensive Analysis of P(p|q) and $\Delta$P(p)}
+% \label{tab:comprehensive}
+% \begin{tabular}{@{}cccccc@{}}
+% \toprule
+% x & y & z & P(p) & P(p|q) & $\Delta$P(p) \\
+% \midrule
+% [Data to be filled] \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+This table illustrates how the Bayesian update varies across different prior probabilities and conditional probabilities, providing insight into the sensitivity of our beliefs to these parameters.
+
+These factors combine to make wet conditions a strong indicator of rain, leading to a significant belief update \textbf{ADD CITATION}.
+
+\section{Conclusion}
+This analysis highlights how Bayesian updating can lead to different magnitudes of belief changes depending on prior probabilities and the strength of evidence. When prior beliefs are strong, new evidence tends to confirm rather than dramatically alter those beliefs. Conversely, when prior probabilities are low and evidence is strongly indicative, Bayesian updating can result in large belief revisions.
+
+These findings have implications for various fields, including meteorology, decision theory, and cognitive science \textbf{ADD CITATION}. Future work could explore more complex scenarios with multiple variables or temporal dynamics.
+
+\end{document}
