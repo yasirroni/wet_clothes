@@ -1,23 +1,46 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,letterpaper]{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{float}
 
+% Page layout settings
+\geometry{
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Title and author
 \title{Wet Clothes: A Bayesian Approach to Inferring Rain from Wet Conditions}
 \author{Muhammad Yasirroni \and Sudiro}
-\date{}
+\date{\today}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-This paper presents a Bayesian approach analysis of the relationship between rain and wet conditions that appears in discrete mathematics. We examine how the probability of rain changes when wet conditions are observed, considering various scenarios. The results demonstrate the power of Bayesian challenging common answer that we can't inferring rain when clothes are wet.
+This paper explores how Bayesian inference can be applied to better understand the relationship between rain and wet conditions that appears in discrete mathematics. We analyze how prior beliefs are updated in the presence of new evidence by calculating posterior probabilities and changes in belief. The study involves generating various scenarios with differing probabilities and examining the impact on the inference of rain occurrence. To make the explanation more easily understandable, we formulate the premises into a rain (\emph{event}) and wet clothes (\emph{observed evidence}) problem. The results demonstrate the power of Bayesian inference schallenging common answer that we can't inferring rain when clothes are wet, highlighting its effectiveness in everyday logical deductions.
 \end{abstract}
 
 \section{Introduction}
